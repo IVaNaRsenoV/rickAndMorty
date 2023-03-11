@@ -1,20 +1,24 @@
-import React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import App from './App';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persister } from 'store';
+import { store } from 'store';
 
-const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
-  cache: new InMemoryCache(),
-});
+import { BrowserRouter } from 'react-router-dom';
 
-// Supported in React 18+
+import App from 'App';
+import './styles/index.css';
+
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 
 root.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <PersistGate loading={null} persistor={persister}>
+        <App />
+      </PersistGate>
+    </BrowserRouter>
+  </Provider>,
 );

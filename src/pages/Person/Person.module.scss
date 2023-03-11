@@ -1,0 +1,98 @@
+.person {
+    max-width: 100%;
+
+    padding-top: 76px;
+
+    .go__back {
+        position: absolute;
+        top: 25px;
+        left: 54px;
+
+        font-family: 'Karla', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+
+        color: #000000;
+
+        cursor: pointer;
+
+        background-color: #FFFFFF;
+        border: none;
+
+        span {
+            padding-left: 12px;
+        }
+    }
+
+    .person__name {
+        margin-top: 16px;
+        margin-bottom: 48px;
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 48px;
+        line-height: 56px;
+        text-align: center;
+
+        color: #081F32;
+    }
+
+    .person__information {
+        color: #8E8E93;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+
+        text-align: center;
+        
+        margin-bottom: 57px;
+    }    
+
+    .avatar {
+        width: 300px;
+        height: 300px;
+
+        margin: 0 auto;
+    }
+
+    .person__info {
+        max-width: 413px;
+        margin: 0 auto;
+    }
+
+    .info__list {
+        padding-bottom: 142px;
+
+        li {
+            padding-top: 9px;
+            padding-bottom: 12px;
+
+            list-style: none;
+            border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+            mix-blend-mode: normal;
+
+            h3 {
+                font-size: 16px;
+                font-weight: 700;
+
+                line-height: 24px;
+                letter-spacing: 0.15px;
+                color: #081F32;
+            }
+
+            span {
+                color: #6E798C;
+
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                letter-spacing: 0.25px;
+            }
+        }
+    }
+}
