@@ -1,0 +1,31 @@
+.login {
+    max-width: 1020px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+        width: 200px;
+        margin: 0 auto;
+    }
+}
+
+.click {
+    cursor: pointer;
+        
+    text-align: center;
+
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+        
+    padding-top: 25px;
+    color: #256c82;
+
+    transition: all .2s ease;
+}
+
+.click:hover {
+    color: #0d2830;
+}

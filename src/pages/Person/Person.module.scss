@@ -56,6 +56,10 @@
         height: 300px;
 
         margin: 0 auto;
+
+        img {
+            border-radius: 50%;
+        }
     }
 
     .person__info {
@@ -92,6 +96,94 @@
                 line-height: 20px;
 
                 letter-spacing: 0.25px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .person {
+    
+        padding-top: 124px;
+
+        .go__back {
+            
+            left: 25px;
+
+            span {
+
+            }
+        }
+    
+        .person__name {
+            font-size: 32px;
+            line-height: 38px;
+            font-weight: normal;
+
+            margin-top: 34px;
+            margin-bottom: 34px;
+        }
+    
+        .person__information {
+            margin-bottom: 25px;
+
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+
+            padding-left: 24px;
+        }    
+    
+        .avatar {
+            max-width: 240px;
+            height: 240px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    
+        .person__info {
+        }
+    
+        .info__list {
+
+            max-width: 264px;
+            margin: 0 auto;
+
+            padding-bottom: 85px;
+
+            li {
+    
+                h3 {
+                    font-weight: 700;
+                }
+    
+                span {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0.25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 312px) {
+    .person {
+        .person__information {
+            text-align: left;
+        }
+
+        .avatar {
+            max-width: 150px;
+            height: 150px;
+
+            img {
+                max-width: 100%;
             }
         }
     }

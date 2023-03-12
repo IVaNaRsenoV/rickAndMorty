@@ -45,4 +45,15 @@
         color: rgba(0, 0, 0, 0.6);
         mix-blend-mode: normal;
     }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@media screen and(max-width: 720px) {
+    .card {
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
 }

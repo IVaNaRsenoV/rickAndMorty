@@ -12,3 +12,9 @@
         max-width: 100%;
     }
 }
+
+@media screen and(max-width: 1020px) {
+    .group {
+        justify-content: space-around;
+    }   
+}
