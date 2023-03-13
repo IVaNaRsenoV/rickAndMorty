@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { url } from 'constants/index';
-import { api } from 'api';
+import axios from 'axios';
 
 export const getAllCharacters = createAsyncThunk(
   'getAllCharacters',
   async function () {
-    const data = await api(url);
+    const data = await axios.get(url);
     return data;
   },
 );

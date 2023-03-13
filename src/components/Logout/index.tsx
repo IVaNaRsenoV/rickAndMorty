@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
-import { LogoutElement } from 'img/logout';
+
 import { LogoutHelper } from 'api/logout';
+import { LogoutElement } from 'img/logout';
+import { useAppDispatch, useAppSelector } from 'hooks/hooks';
 import styles from './Logout.module.scss';
 
 export const Logout: FC = () => {

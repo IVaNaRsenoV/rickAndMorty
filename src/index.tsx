@@ -1,13 +1,11 @@
 import * as ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { PersistGate } from 'redux-persist/integration/react';
+
 import { persister } from 'store';
 import { store } from 'store';
-
-import { HashRouter } from 'react-router-dom';
-
-import { GoogleOAuthProvider } from '@react-oauth/google';
-
 import App from 'App';
 import './styles/index.css';
 

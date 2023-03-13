@@ -1,10 +1,11 @@
 import { FC, useEffect } from 'react';
+import { Routes, Route } from 'react-router';
 
 import { useAppDispatch, useAppSelector } from 'hooks/hooks';
-import { Routes, Route } from 'react-router';
+import { getAllCharacters } from 'features/getAllCharacter/getAllCharacters';
 import { Main, Person } from 'pages';
 import { LoginPage } from 'components';
-import { getAllCharacters } from 'features/getAllCharacter/getAllCharacters';
+
 
 const App: FC = () => {
 

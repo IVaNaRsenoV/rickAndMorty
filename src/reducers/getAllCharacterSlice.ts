@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { StateType } from 'types/Character';
 import { getAllCharacters } from 'features/getAllCharacter/getAllCharacters';
 import { searchCharacter } from 'features/searchCharacter/searchCharacter';
 import { sortArrayHelpers, sortResultHelper } from 'helpers/sortArrayHelper';
+import { filterCharactersHelper } from 'helpers/filterCharactersHelper';
 
 const initialState: StateType  = {
   arr: [],
@@ -17,15 +19,12 @@ const getAllCharacterSlice = createSlice({
     initialState,
     reducers: {
       filterCharacters: (state, action: PayloadAction<string>) => {
-        state.input = action.payload;
-        if (state.search.length !== 0) {
-          state.search = state.search.filter(el => el.name.includes(action.payload)).sort((a: any, b: any) => a.name.localeCompare(b.name));
-        };
+        filterCharactersHelper(state, action);
       },
     },
     extraReducers: builder => {
 
-      builder.addCase(getAllCharacters.pending, (state) => {
+      builder.addCase(getAllCharacters.pending, (state: StateType) => {
         state.loading = true;
         state.error = false;
       });
@@ -36,12 +35,12 @@ const getAllCharacterSlice = createSlice({
         sortArrayHelpers(state, action);
       });
 
-      builder.addCase(getAllCharacters.rejected, (state) => {
+      builder.addCase(getAllCharacters.rejected, (state: StateType) => {
         state.loading = false;
         state.error = true;
       });
 
-      builder.addCase(searchCharacter.pending, (state) => {
+      builder.addCase(searchCharacter.pending, (state: StateType) => {
         state.loading = true;
         state.error = false;
       });
@@ -53,7 +52,7 @@ const getAllCharacterSlice = createSlice({
         state.error = false;
       });
 
-      builder.addCase(searchCharacter.rejected, (state) => {
+      builder.addCase(searchCharacter.rejected, (state: StateType) => {
         state.loading = false;
         state.error = true;
       });

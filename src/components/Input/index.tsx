@@ -1,8 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
+
 import { Search } from 'img/search';
+import { useAppDispatch } from 'hooks/hooks';
 import { filterCharacters } from 'reducers/getAllCharacterSlice';
 import { searchCharacter } from 'features/index';
-import { useAppDispatch } from 'hooks/hooks';
 import styles from './Input.module.scss';
 
 export const Input: FC = () => {
