@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { StateType } from 'types/Character';
 import { getAllCharacters } from 'features/getAllCharacter/getAllCharacters';
 import { searchCharacter } from 'features/searchCharacter/searchCharacter';

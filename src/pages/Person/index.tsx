@@ -1,9 +1,8 @@
 import { FC, useEffect } from 'react';
-
 import { Link } from 'react-router-dom';
+
 import { useAppSelector } from 'hooks/hooks';
 import { Arrow } from 'img/arrow';
-
 import styles from './Person.module.scss';
 
 export const Person: FC = () => {

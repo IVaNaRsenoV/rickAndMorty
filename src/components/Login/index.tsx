@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
 import { useGoogleLogin } from '@react-oauth/google';
-import { Login } from 'api/login';
+
 import img from 'img/RickAndMorty.png';
+import { useAppDispatch, useAppSelector } from 'hooks/hooks';
+import { Login } from 'api/login';
 import styles from './Login.module.scss';
 
 export const LoginPage: FC = () => {
