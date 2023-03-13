@@ -7,7 +7,7 @@ import styles from './Logout.module.scss';
 
 export const Logout: FC = () => {
 
-  const [toggle, setToggle] = useState<boolean>(false);
+  const [toggle, setToggle] = useState(false);
 
   const dispatch = useAppDispatch();
   const auth = useAppSelector(state => state.auth.auth);

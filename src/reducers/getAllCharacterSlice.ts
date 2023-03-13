@@ -1,11 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { StateType } from 'types/Character';
+import { IStateType, CharacterList } from 'interfaces/Character';
 import { getAllCharacters } from 'features/getAllCharacter/getAllCharacters';
 import { searchCharacter } from 'features/searchCharacter/searchCharacter';
-import { sortArrayHelpers, sortResultHelper } from 'helpers/sortArrayHelper';
+import { sortArrayHelpers } from 'helpers/sortArrayHelper';
+import { sortResultHelper } from 'helpers/sortResultHelper';
+import { filterCharactersHelper } from 'helpers/filterCharacterHelper';
 
-const initialState: StateType  = {
+interface IActionType {
+  payload: {
+    results: CharacterList;
+  }
+}
+
+const initialState: IStateType  = {
   arr: [],
   search: [],
   input: '',
@@ -17,44 +25,42 @@ const getAllCharacterSlice = createSlice({
     name: 'getAllCharacters',
     initialState,
     reducers: {
-      filterCharacters: (state, action: PayloadAction<string>) => {
+      filterCharacters: (state: IStateType, action: PayloadAction<string>) => {
         state.input = action.payload;
-        if (state.search.length !== 0) {
-          state.search = state.search.filter(el => el.name.includes(action.payload)).sort((a: any, b: any) => a.name.localeCompare(b.name));
-        };
+        filterCharactersHelper(state, action);
       },
     },
     extraReducers: builder => {
 
-      builder.addCase(getAllCharacters.pending, (state) => {
+      builder.addCase(getAllCharacters.pending, (state: IStateType) => {
         state.loading = true;
         state.error = false;
       });
 
-      builder.addCase(getAllCharacters.fulfilled, (state, action) => {
+      builder.addCase(getAllCharacters.fulfilled, (state, action: IActionType) => {
         state.loading = false;
         state.error = false;
-        sortArrayHelpers(state, action);
+        sortArrayHelpers(state, action.payload.results);
       });
 
-      builder.addCase(getAllCharacters.rejected, (state) => {
+      builder.addCase(getAllCharacters.rejected, (state: IStateType) => {
         state.loading = false;
         state.error = true;
       });
 
-      builder.addCase(searchCharacter.pending, (state) => {
+      builder.addCase(searchCharacter.pending, (state: IStateType) => {
         state.loading = true;
         state.error = false;
       });
 
-      builder.addCase(searchCharacter.fulfilled, (state, action) => {
-        state.arr = sortResultHelper(action);
-        state.search = sortResultHelper(action);
+      builder.addCase(searchCharacter.fulfilled, (state, action: IActionType) => {
+        state.arr = sortResultHelper(action.payload.results);
+        state.search = sortResultHelper(action.payload.results);
         state.loading = false;
         state.error = false;
       });
 
-      builder.addCase(searchCharacter.rejected, (state) => {
+      builder.addCase(searchCharacter.rejected, (state: IStateType) => {
         state.loading = false;
         state.error = true;
       });

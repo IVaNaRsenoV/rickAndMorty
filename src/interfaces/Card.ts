@@ -1,4 +1,4 @@
-export interface CardType {
+export interface ICardType {
     name: string;
     gender: string;
     image: string;
