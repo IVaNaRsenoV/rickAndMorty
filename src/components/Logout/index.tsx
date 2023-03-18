@@ -1,21 +1,23 @@
 import { FC, useState } from 'react';
 
-import { LogoutElement } from 'img/logout';
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
 import { LogoutHelper } from 'api/logout';
+import { useAppDispatch, useAppSelector } from 'hooks/hooks';
+import { ReactComponent as LogoutElement } from 'assets/icons/logout.svg';
 import styles from './Logout.module.scss';
 
 export const Logout: FC = () => {
 
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
   const auth = useAppSelector(state => state.auth.auth);
 
+  const toggleCheck = () => {
+    if (toggle === false) setToggle(!toggle);
+  };
+
   return (
-    <div className={styles.logout} onClick={() => {
-      if(toggle === false) setToggle(!toggle);
-    }}>
+    <div className={styles.logout} onClick={toggleCheck}>
         <LogoutElement />
         {
           toggle ?

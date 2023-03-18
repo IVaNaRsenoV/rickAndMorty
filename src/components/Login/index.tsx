@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 
-import img from 'img/RickAndMorty.png';
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
 import { Login } from 'api/login';
+import img from 'assets/img/RickAndMorty.png';
+import { useAppDispatch, useAppSelector } from 'hooks/hooks';
 import styles from './Login.module.scss';
 
 export const LoginPage: FC = () => {
@@ -15,7 +15,7 @@ export const LoginPage: FC = () => {
     onSuccess: async function (tokenResponse) {
             Login(tokenResponse, auth, dispatch);
         },
-        onError: (error) => console.log(error),
+        onError: (error) => error,
     });
 
   return (

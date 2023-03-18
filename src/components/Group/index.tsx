@@ -1,14 +1,15 @@
 import { FC} from 'react';
 
 import { RootState } from 'store';
-import { useAppSelector } from 'hooks/hooks';
 import { Error } from '../Error';
 import { Card } from 'components/Card';
+import { useAppSelector } from 'hooks/hooks';
 import styles from './Group.module.scss';
 
 export const Group: FC = () => {
 
   const { arr, error } = useAppSelector((state: RootState) => state.getAll);
+
 
   if (error) return <Error />;
 

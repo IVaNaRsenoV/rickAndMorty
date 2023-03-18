@@ -1,9 +1,10 @@
 import { FC } from 'react';
+
+import { ICardType } from 'interfaces/ICardType';
+import { useAppDispatch } from 'hooks/hooks';
+import { setInfoPerson } from 'reducers/getInfoPerson';
 import { Link } from 'react-router-dom';
 
-import { ICardType } from 'interfaces/Card';
-import { useAppDispatch } from 'hooks/hooks';
-import { setInfoPerson } from 'reducers/getInfoPersonSlice';
 import styles from './Card.module.scss';
 
 export const Card: FC<ICardType> = ({ name, image, gender, status, species, origin, type }) => {

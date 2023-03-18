@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type InfoType = {
-    name: string;
-    image: string;
+    name?: string;
+    image?: string;
     gender: string;
     status: string;
     species: string;

@@ -1,0 +1,55 @@
+@mixin computedFont ( $font-size, $line-height, $font-family, $font-weight) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-family: $font-family, sans-serif;
+    line-height: $line-height;
+}
+
+@mixin margintTopBottom($margin-top, $margin-bottom) {
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+}
+
+.person__name {
+    @include computedFont(48px, 56px, 'Roboto', 400);
+    @include margintTopBottom(16px, 48px);
+
+    text-align: center;
+
+    color: #081F32;
+}
+
+.person__information {
+    @include computedFont(20px, 24px, 'Roboto', 500);
+
+    color: #8E8E93;
+    font-style: normal;
+    letter-spacing: 0.15px;
+
+    text-align: center;
+    
+    margin-bottom: 57px;
+} 
+
+@media screen and (max-width: 640px) {
+    .person__name {
+        @include computedFont(32px, 38px, 'Roboto', 400);
+        @include margintTopBottom(34px, 34px);
+
+        font-weight: normal;
+    }
+
+    .person__information {
+        @include computedFont(20px, 24px, 'Roboto', 500);
+        letter-spacing: 0.15px;
+
+        margin-bottom: 25px;
+        padding-left: 24px;
+    }    
+}
+
+@media screen and(max-width: 312px) {
+    .person__information {
+        text-align: left;
+    }
+}

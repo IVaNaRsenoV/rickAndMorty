@@ -1,4 +1,4 @@
-import img from 'img/logo.png';
+import img from 'assets/img/logo.png';
 import styles from './Header.module.scss';
 
 export const Header = () => {

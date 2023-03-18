@@ -1,0 +1,21 @@
+@mixin indents ($max-width) {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+.person__info {
+    @include indents(413px);
+}
+
+.info__list {
+    padding-bottom: 142px;
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .info__list {
+        @include indents (264px);
+        padding-bottom: 85px;
+    }
+}

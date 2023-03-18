@@ -11,13 +11,13 @@ import {
         } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import authSlice from 'reducers/authSlice';
-import getAllCharacterSlice from 'reducers/getAllCharacterSlice';
-import setInfoPersonSlice from 'reducers/getInfoPersonSlice';
+import authSlice from 'reducers/auth';
+import getAllCharacterSlice from 'reducers/getAllCharacter';
+import getInfoPersonSlice from 'reducers/getInfoPerson';
 
 const rootReducers = combineReducers({
   getAll: getAllCharacterSlice,
-  setInfoPerson: setInfoPersonSlice,
+  setInfoPerson: getInfoPersonSlice,
   auth: authSlice,
 });
 

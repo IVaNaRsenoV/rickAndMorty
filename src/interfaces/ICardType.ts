@@ -1,7 +1,7 @@
 export interface ICardType {
-    name: string;
+    name?: string;
     gender: string;
-    image: string;
+    image?: string;
     status: string;
     species: string;
     origin: {

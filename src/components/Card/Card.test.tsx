@@ -14,7 +14,7 @@ const mockCardData = {
 };
 
 describe('Card component', () => {
-  it('renders card data', () => {
+  test('renders card data', () => {
     render(<Card {...mockCardData} />);
     expect(screen.getByText(mockCardData.name)).toBeInTheDocument();
     expect(screen.getByText(mockCardData.gender)).toBeInTheDocument();

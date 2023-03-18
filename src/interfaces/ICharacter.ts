@@ -7,7 +7,7 @@ export interface ICharacter {
 
 export type CharacterList = ICharacter[] | undefined;
 
-export interface IStateType {
+export type IStateType = {
     arr: CharacterList[];
     search: ICharacter[];
     input: string;

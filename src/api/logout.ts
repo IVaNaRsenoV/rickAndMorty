@@ -1,8 +1,7 @@
 import { googleLogout } from '@react-oauth/google';
-import { setLogin } from 'reducers/authSlice';
+import { setLogin } from 'reducers/auth/index';
 
-export const LogoutHelper = (dispatch: any, auth: any) => {
+export const LogoutHelper = (dispatch: any, auth: boolean) => {
     googleLogout();
     dispatch(setLogin(!auth));
-    console.log('logout');
 };
